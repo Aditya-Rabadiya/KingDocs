@@ -1,0 +1,10 @@
+node_modules/
+.git/
+.vercel/
+dist/
+*.env
+/.env
+/.env.*
+package-lock.json
+bun.lock
+.DS_Store
