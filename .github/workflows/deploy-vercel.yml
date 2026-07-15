@@ -10,6 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Debug: list repository files
+        run: |
+          echo "Repository files at workspace root:"
+          ls -la
+          echo "Contents of current directory:" 
+          pwd
+          ls -la
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
