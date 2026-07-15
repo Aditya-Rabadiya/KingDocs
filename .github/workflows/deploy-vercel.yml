@@ -20,6 +20,12 @@ jobs:
           echo "Contents of current directory:" 
           pwd
           ls -la
+          echo "--- package.json preview ---"
+          if [ -f package.json ]; then
+            sed -n '1,120p' package.json || true
+          else
+            echo "package.json not found"
+          fi
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
